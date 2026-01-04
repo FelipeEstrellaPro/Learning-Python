@@ -24,16 +24,16 @@ Cuando usas `except BaseException`, atrapas incluso cuando el usuario intenta ce
 
 ```mermaid
 graph TD
-    Start[Inicio del Código Protegido] --> Try{¿Ocurrió Error?}
+    Start[Inicio del Código Protegido] --> Try{"¿Ocurrió Error?"}
     
-    Try -- No --> Else[Bloque Else: Todo salió bien]
+    Try -- No --> Else["Bloque Else: Todo salió bien"]
     Else --> Finally
     
-    Try -- Sí --> Catch{¿Tenemos Red para este error?}
-    Catch -- Sí --> Except[Bloque Except: Manejar error]
-    Except --> Finally[Bloque Finally: Limpiar]
+    Try -- Sí --> Catch{"¿Tenemos Red para este error?"}
+    Catch -- Sí --> Except["Bloque Except: Manejar error"]
+    Except --> Finally["Bloque Finally: Limpiar"]
     
-    Catch -- No --> Crash[💀 CRASH DEL PROGRAMA]
+    Catch -- No --> Crash["💀 CRASH DEL PROGRAMA"]
     
     Finally --> End[Continuar ejecución del script]
     

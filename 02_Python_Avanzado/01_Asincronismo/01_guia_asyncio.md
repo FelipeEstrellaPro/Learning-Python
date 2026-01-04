@@ -32,26 +32,26 @@ sequenceDiagram
     participant CPU
     participant DB as Base de Datos
     
-    Note over CPU,DB: 🐢 BLOQUEANTE (Sync)
+    Note over CPU,DB: "🐢 BLOQUEANTE (Sync)"
     CPU->>DB: Query 1 (Tarda 2s)
     activate DB
-    Note left of CPU: Zzz... (CPU inactivo)
+    Note left of CPU: "Zzz... (CPU inactivo)"
     DB-->>CPU: Resultado 1
     deactivate DB
     CPU->>DB: Query 2 (Tarda 2s)
     activate DB
-    Note left of CPU: Zzz... (CPU inactivo)
+    Note left of CPU: "Zzz... (CPU inactivo)"
     DB-->>CPU: Resultado 2
     deactivate DB
-    Note over CPU: Tiempo Total: 4s
+    Note over CPU: "Tiempo Total: 4s"
     
-    Note over CPU,DB: ⚡ NO BLOQUEANTE (Async)
+    Note over CPU,DB: "⚡ NO BLOQUEANTE (Async)"
     CPU->>DB: Query 1
     CPU->>DB: Query 2
-    Note left of CPU: CPU haciendo otras cosas...
+    Note left of CPU: "CPU haciendo otras cosas..."
     DB-->>CPU: Resultado 1
     DB-->>CPU: Resultado 2
-    Note over CPU: Tiempo Total: ~2s
+    Note over CPU: "Tiempo Total: ~2s"
 ```
 
 ---

@@ -25,15 +25,15 @@ Los profilers estadísticos miran el CPU cada X milisegundos.
 
 ```mermaid
 graph TD
-    Main[Main 100%] --> A[Carga Datos 10%]
-    Main --> B[Proceso Pesado 85%]
-    Main --> C[Guardar 5%]
+    Main["Main 100%"] --> A["Carga Datos 10%"]
+    Main --> B["Proceso Pesado 85%"]
+    Main --> C["Guardar 5%"]
     
-    B --> B1[Cálculo Matriz 5%]
-    B --> B2[Bucle For Mal Optimizado 80%]
+    B --> B1["Cálculo Matriz 5%"]
+    B --> B2["Bucle For Mal Optimizado 80%"]
     
     style B2 fill:#ff3333,color:#fff
-    note right of B2: 🔥 CUELLO DE BOTELLA HERE 🔥
+    note right of B2: "🔥 CUELLO DE BOTELLA HERE 🔥"
 ```
 
 ---

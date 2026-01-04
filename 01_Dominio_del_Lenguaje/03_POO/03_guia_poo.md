@@ -36,11 +36,11 @@ classDiagram
         +comer()
     }
     class VoladorMixin {
-        <<Mixin>>
+        "<<Mixin>>"
         +volar()
     }
     class NadadorMixin {
-        <<Mixin>>
+        "<<Mixin>>"
         +nadar()
     }
     class Pato {
