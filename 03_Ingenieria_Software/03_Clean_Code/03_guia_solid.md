@@ -24,13 +24,13 @@ El objetivo de la Ingeniería de Software es:
 graph BT
     Switch[Interruptor] 
     Bulb[Bombilla Concreta]
-    Socket[<<Interfaz>> Enchufe]
+    Socket["<<Interfaz>> Enchufe"]
     
-    subgraph Mal Diseño [Acoplamiento Alto]
+    subgraph MalDiseno ["Mal Diseño - Acoplamiento Alto"]
         Switch -- depende de --> Bulb
     end
     
-    subgraph Buen Diseño [Inversión Dependencias]
+    subgraph BuenDiseno ["Buen Diseño - Inversión Dependencias"]
         Switch -- usa --> Socket
         Bulb -- implementa --> Socket
     end

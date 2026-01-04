@@ -31,24 +31,24 @@ La Programación Funcional es **Inmutable**.
 
 ```mermaid
 graph LR
-    Input[Datos Crudos: [1, 2, 3, 4]] 
+    Input["Datos Crudos: [1, 2, 3, 4]"] 
     
-    subgraph Robot 1: Filter
-        F1{¿Es Par?}
-        F1 -- Sí --> R1[Pasa: 2, 4]
-        F1 -- No --> Basura[1, 3 Descartados]
+    subgraph "Robot 1: Filter"
+        F1{"¿Es Par?"}
+        F1 -- Sí --> R1["Pasa: 2, 4"]
+        F1 -- No --> Basura["1, 3 Descartados"]
     end
     
-    subgraph Robot 2: Map
+    subgraph "Robot 2: Map"
         M1[Multiplicar x 10]
         R1 --> M1
-        M1 --> R2[Resultado: 20, 40]
+        M1 --> R2["Resultado: 20, 40"]
     end
     
-    subgraph Robot 3: Reduce
+    subgraph "Robot 3: Reduce"
         Red1[Sumar Todo]
         R2 --> Red1
-        Red1 --> Final[Total: 60]
+        Red1 --> Final["Total: 60"]
     end
     
     Input --> F1

@@ -25,9 +25,9 @@ Todos los tests profesionales siguen el patrón **Arrange-Act-Assert**.
 
 ```mermaid
 graph BT
-    UI[Tests E2E (UI) - Lentos/Caros]
-    Integration[Tests Integración - Medios]
-    Unit[Tests Unitarios - Rápidos/Baratos]
+    UI["Tests E2E (UI) - Lentos/Caros"]
+    Integration["Tests Integración - Medios"]
+    Unit["Tests Unitarios - Rápidos/Baratos"]
     
     Unit --> Integration
     Integration --> UI

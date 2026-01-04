@@ -26,11 +26,11 @@ Una imagen de Docker no es un bloque sólido. Son capas (Layers) como una ceboll
 
 ```mermaid
 graph BT
-    L1[Kernel del Host (Linux)]
-    L2[Base Image: Python 3.10 Slim]
-    L3[Dependencies: pip install -r requirements.txt]
-    L4[Source Code: COPY . /app]
-    L5[Container: Writable Layer]
+    L1["Kernel del Host (Linux)"]
+    L2["Base Image: Python 3.10 Slim"]
+    L3["Dependencies: pip install -r requirements.txt"]
+    L4["Source Code: COPY . /app"]
+    L5["Container: Writable Layer"]
     
     L1 --> L2
     L2 --> L3

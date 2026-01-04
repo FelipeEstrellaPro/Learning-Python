@@ -43,18 +43,18 @@ Esto es **O(1)** (Complejidad Constante). Tarda lo mismo con 1 dato que con 1 bi
 
 ```mermaid
 graph TD
-    subgraph Lista [Búsqueda en Lista O(n)]
-        L1[Inicio] --> L2{¿Es item 1?}
-        L2 -- No --> L3{¿Es item 2?}
-        L3 -- No --> L4{¿Es item 3?}
+    subgraph Lista ["Búsqueda en Lista O(n)"]
+        L1[Inicio] --> L2{"¿Es item 1?"}
+        L2 -- No --> L3{"¿Es item 2?"}
+        L3 -- No --> L4{"¿Es item 3?"}
         L4 -- ... --> L5[Encontrado!]
         style L2 fill:#ffcccc
         style L3 fill:#ffcccc
         style L4 fill:#ffcccc
     end
 
-    subgraph Set [Búsqueda en Set O(1)]
-        S1[Hash('Item')] --> S2[Dirección Memoria Exacta]
+    subgraph Set ["Búsqueda en Set O(1)"]
+        S1["Hash('Item')"] --> S2[Dirección Memoria Exacta]
         S2 --> S3[Encontrado!]
         style S1 fill:#ccffcc
         style S2 fill:#ccffcc
