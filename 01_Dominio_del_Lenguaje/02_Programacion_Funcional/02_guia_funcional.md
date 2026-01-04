@@ -1,44 +1,39 @@
-# ƛ Programación Funcional en Python
+# 🏭 Programación Funcional: La Fábrica de Juguetes
 
-![Level 1](https://img.shields.io/badge/Level-1-blue)
+![Difficulty](https://img.shields.io/badge/Dificultad-Media-yellow)
 
-## 1. ¿Qué es?
-Python no es un lenguaje puramente funcional (como Haskell), pero soporta muchas características funcionales. Esto significa tratar a las funciones como **ciudadanos de primera clase** (pueden pasarse como argumentos, retornarse, asignarse a variables).
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Herramientas Principales
+Imagina una fábrica de autos.
+1.  Entra una pieza de metal.
+2.  Un robot la aplasta (**Map**).
+3.  Otro robot revisa si está rota (**Filter**).
+4.  Al final se juntan todas las piezas (**Reduce**).
 
-### 2.1 Lambda (Funciones Anónimas) 🎭
-Funciones pequeñas, de una sola línea, sin nombre.
-`lambda argumentos: expresion`
-
-> [!NOTE]
-> **Uso común**: Como argumento para `sort`, `max`, `min` o `map`.
-
-### 2.2 Map, Filter, Reduce 🔄
-- **Map(func, iterable)**: Aplica `func` a cada elemento. Retorna un iterador.
-- **Filter(func, iterable)**: Retorna elementos donde `func` es True.
-- **Reduce(func, iterable)**: Aplica `func` acumulativamente (requiere `import functools`).
-
-### 2.3 Comprensiones (Comprehensions) ✨
-La forma "Pythonica" de hacer map/filter. Son más legibles y, a menudo, más rápidas.
-
-- **List Comprehension**: `[x*2 for x in lista if x > 0]`
-- **Dict Comprehension**: `{k:v for k,v in lista}`
-- **Set Comprehension**: `{x for x in lista}`
-
-## 3. ¿Map/Filter o Comprehensions?
-En Python, **casi siempre se prefieren las comprensiones** por legibilidad.
-`map` y `filter` pueden ser útiles si ya tienes la función definida o si necesitas "lazy evaluation" (aunque las expresiones generadoras también lo hacen).
-
-## 4. 🧠 Diagrama: Flujo de Datos
-
-```mermaid
-graph LR
-    A[Datos Entrada] --> B{Filter}
-    B -- Cumple condición --> C[Map (Transformar)]
-    C --> D[Reduce (Agregar)]
-    D --> E[Resultado Final]
-```
+En Python, tus datos son las piezas de metal y las "Funciones" son los robots.
+Lo genial es que **los robots no guardan las piezas**, solo las pasan al siguiente.
 
 ---
-[⬅️ Anterior: Estructuras de Datos](../01_Estructuras_de_Datos/01_guia_estructuras.md) | [Siguiente: POO ➡️](../03_POO/03_guia_poo.md)
+
+## 🛠️ Los 3 Robots Maestros
+
+### 1. El Robot Transformador (`map`)
+Toma un carrito y lo pinta de rojo.
+`map(pintar_rojo, lista_de_autos)`
+
+### 2. El Robot Inspector (`filter`)
+Deja pasar solo a los autos que tienen 4 ruedas. Los de 3 ruedas se van a la basura.
+`filter(tiene_4_ruedas, lista_de_autos)`
+
+### 3. El Robot Empaquetador (`reduce`)
+Toma todos los autos y los mete en un camión gigante (un solo resultado).
+`reduce(sumar, lista_numeros)`
+
+> [!TIP]
+> **Comprensiones (La Magia)**:
+> Python tiene una forma secreta de escribir esto más rápido. Se llaman "List Comprehensions".
+> Es como decirle a la fábrica: *"¡Hazme una lista de autos rojos que tengan 4 ruedas!"* en una sola frase.
+> `[pintar(auto) for auto in autos if tiene_4_ruedas(auto)]`
+
+---
+[⬅️ Anterior: Mochila Mágica](../01_Estructuras_de_Datos/01_guia_estructuras.md) | [Siguiente: Planos Maestros ➡️](../03_POO/03_guia_poo.md)

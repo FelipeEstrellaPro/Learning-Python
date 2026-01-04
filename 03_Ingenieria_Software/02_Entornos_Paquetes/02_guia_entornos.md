@@ -1,44 +1,31 @@
-# 📦 Entornos y Paquetes
+# 🧪 Entornos: El Laboratorio Aislado
 
-![Level 3](https://img.shields.io/badge/Level-3-green)
+![Difficulty](https://img.shields.io/badge/Dificultad-Importante-blue)
 
-## 1. El Caos de las Dependencias 🔥
-Instalar todo con `pip install X` en tu sistema global es receta para el desastre ("Dependency Hell").
+## 👶 Explicación para Niños (ELI5)
 
-> [!IMPORTANT]
-> **Regla de Oro**: Cada proyecto debe tener su propio entorno aislado.
+Imagina que tienes dos experimentos: 
+1.  Un volcán de bicarbonato. 🌋
+2.  Una planta delicada. 🌿
 
-## 2. Herramientas Modernas
-
-### `venv` (Estándar) 🐢
-- Viene con Python.
-- `python -m venv .venv`
-- Bueno para scripts simples, requiere gestión manual de `requirements.txt`.
-
-### `Poetry` (El Estándar Profesional) 🎩
-Combina gestión de dependencias, empaquetado y publicación.
-- Usa `pyproject.toml` (estándar PEP 518).
-- Resuelve conflictos de versiones ("Lockfile").
-- Comandos: `poetry add numpy`, `poetry shell`.
-
-## 3. pyproject.toml 📄
-El archivo único para gobernar todo. Reemplaza a `setup.py`, `requirements.txt`, `pytest.ini`, etc.
-
-```toml
-[tool.poetry]
-name = "mi-proyecto"
-version = "0.1.0"
-description = ""
-authors = ["Tu Nombre <tu@email.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.28.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-```
+Si mezclas los ingredientes de los dos en la misma mesa (Tu Sistema Global), el vinagre del volcán matará a la planta.
+**Solución**: Usa mesas separadas (**Entornos Virtuales**).
+En la Mesa A tienes el vinagre. En la Mesa B tienes el agua. Nada se mezcla.
 
 ---
-[⬅️ Anterior: Testing](../01_Testing/01_guia_testing.md) | [Siguiente: Clean Code 🧹](../03_Clean_Code/03_guia_solid.md)
+
+## 🎩 Herramientas Mágicas
+
+### `Poetry` (El Mayordomo del Laboratorio)
+Antes usábamos listas de compras en papel (`requirements.txt`).
+Poetry es un mayordomo inteligente.
+- Tú le dices: "Quiero hacer un volcán".
+- Él te trae el vinagre exacto, el bicarbonato exacto, y te prepara la mesa.
+- Además, anota todo en un libro (`pyproject.toml`) para que otro científico pueda repetir el experimento.
+
+> [!CAUTION]
+> **Nunca instales con `sudo pip install`**.
+> Es como echar ácido en el suelo de toda la fábrica. Dañarás otros proyectos.
+
+---
+[⬅️ Anterior: Inspector](../01_Testing/01_guia_testing.md) | [Siguiente: LEGOs 🧱](../03_Clean_Code/03_guia_solid.md)

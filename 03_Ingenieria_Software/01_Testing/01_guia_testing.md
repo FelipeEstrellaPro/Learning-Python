@@ -1,31 +1,32 @@
-# 🧪 Testing: El Estándar de Calidad
+# 🕵️‍♂️ Testing: El Inspector de Calidad
 
-![Level 3](https://img.shields.io/badge/Level-3-green)
+![Difficulty](https://img.shields.io/badge/Dificultad-Esencial-green)
 
-## 1. Unittest vs Pytest
-- **Unittest** 🏛️: Viene en la librería estándar (no requiere instalación). Es verboso, basado en clases (inspirado en JUnit de Java).
-- **Pytest** 🚀: De facto estándar moderno. Sintaxis limpia (usa `assert`), features poderosos (fixtures, parametrize). Requiere `pip install pytest`.
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Conceptos Clave
+Imagina que construyes un robot. 🤖
+Antes de venderlo, tienes que probar si funciona.
+- **Manual**: Lo enciendes y ves si camina. (Lento y aburrido).
+- **Automático (`pytest`)**: Contratas a un ejército de mini-robots inspectores que revisan cada tornillo en 1 segundo.
 
-### Aserciones (`assert`) ✅
-En unittest: `self.assertEqual(a, b)`
-En pytest: `assert a == b` (pytest introspecciona el fallo y te dice exactamente por qué falló).
+## 🧪 Herramientas del Inspector
 
-### Fixtures (`@pytest.fixture`) 🧪
-Reemplazan al `setUp` y `tearDown`. Permiten inyectar dependencias (datos de prueba, conexiones a BD) a los tests que las necesiten. Son modulares y reutilizables.
+### 1. `assert` (El Detector de Mentiras)
+Es una pregunta simple: *"¿Es esto verdad?"*.
+```python
+def sumar(a, b): return a + b
 
-### Parametrización 📊
-Ejecutar el mismo test con múltiples entradas.
-`@pytest.mark.parametrize`
+# El test
+def test_suma():
+    resultado = sumar(2, 2)
+    assert resultado == 4  # ✅ Pasa
+    assert resultado == 5  # ❌ Falla y suena la alarma 🚨
+```
 
-### Mocking (`unittest.mock`) 🎭
-Simular partes del sistema (APIs externas, DBs) para aislar lo que estás probando.
-
-## 3. Estructura de un Test
-1. **Arrange**: Preparar el entorno.
-2. **Act**: Ejecutar la función.
-3. **Assert**: Verificar el resultado.
+### 2. Fixtures (El Ayudante de Escenario)
+Imagina que para probar el robot necesitas construir una ciudad de cartón.
+En lugar de construirla en CADA test, usas un **Fixture**.
+El ayudante construye la ciudad, tú pruebas el robot, y el ayudante destruye la ciudad al terminar.
 
 ---
-[⬅️ Anterior Nivel: Tipado](../../02_Python_Avanzado/03_Tipado/03_guia_type_hinting.md) | [Siguiente: Entornos 📦](../02_Entornos_Paquetes/02_guia_entornos.md)
+[⬅️ Volver a la Fábrica](../README.md) | [Siguiente: Laboratorio 🧪](../02_Entornos_Paquetes/02_guia_entornos.md)

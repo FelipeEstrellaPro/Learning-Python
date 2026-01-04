@@ -1,48 +1,48 @@
-# 🐍 Python de Cero a Experto: La Guía Definitiva
+# 🐍 Python de Cero a Experto: Edición ELI5 🎓
 
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue?style=for-the-badge&logo=python)
-![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+![Style](https://img.shields.io/badge/Estilo-ELI5_Divertido-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Misión-Cumplida-success?style=for-the-badge)
 
-¡Bienvenido! Este repositorio contiene una ruta de aprendizaje estructurada, práctica y profunda para transformar tu conocimiento de Python. No solo aprenderás **qué** hacen las cosas, sino **cómo** funcionan por dentro y **cuándo** usarlas.
+¡Bienvenido! Has encontrado la guía más amigable del universo. 🌌
+Aquí no usamos palabras aburridas. Usamos **Metáforas, Emojis y Magia** para explicarte conceptos de experto como si tuvieras 5 años.
 
-## 🗺️ Mapa del Tesoro
+## 🗺️ Tu Aventura
 
-### 🧠 Nivel 1: Dominio del Lenguaje
-*Lo que separa a los juniors de los seniors: entender las herramientas.*
-- [📂 Estructuras de Datos](01_Dominio_del_Lenguaje/01_Estructuras_de_Datos/01_guia_estructuras.md): List vs Set, Big O, `collections`.
-- [📂 Programación Funcional](01_Dominio_del_Lenguaje/02_Programacion_Funcional/02_guia_funcional.md): Lambda, Map, Comprensiones.
-- [📂 POO Avanzada](01_Dominio_del_Lenguaje/03_POO/03_guia_poo.md): Mixins, Dunder Methods, Properties.
-- [📂 Decoradores y Generadores](01_Dominio_del_Lenguaje/04_Decoradores_Generadores/04_guia_deco_gen.md): Control de flujo elegante.
+### [🧰 Nivel 1: La Caja de Herramientas](./01_Dominio_del_Lenguaje/README.md)
+*Domina tus instrumentos de trabajo.*
+- **Estructuras**: La Mochila Mágica vs La Estantería.
+- **Funcional**: La Fábrica de Juguetes.
+- **Errores**: La Red de Seguridad (Try/Except).
 
-### 🚀 Nivel 2: Python Avanzado
-*Rendimiento, concurrencia y robustez.*
-- [📂 Asincronismo](02_Python_Avanzado/01_Asincronismo/01_guia_asyncio.md): `asyncio`, Event Loop.
-- [📂 Gestión de Memoria](02_Python_Avanzado/02_Gestion_Memoria/02_guia_memoria.md): GIL, Garbage Collection, `__slots__`.
-- [📂 Tipado Estático](02_Python_Avanzado/03_Tipado/03_guia_type_hinting.md): Type Hints, Protocol, Mypy.
+### [🏎️ Nivel 2: El Auto de Carreras](./02_Python_Avanzado/README.md)
+*Aprende a ir rápido sin estrellarte.*
+- **Asyncio**: El Chef Multitarea.
+- **Memoria**: El Equipo de Limpieza.
+- **Profiling**: El Velocímetro (NUEVO).
 
-### 🏗️ Nivel 3: Ingeniería de Software
-*Escribir código profesional, mantenible y testeable.*
-- [📂 Testing](03_Ingenieria_Software/01_Testing/01_guia_testing.md): Pytest, Fixtures, Mocking.
-- [📂 Entornos](03_Ingenieria_Software/02_Entornos_Paquetes/02_guia_entornos.md): Poetry, Virtualenvs.
-- [📂 Clean Code](03_Ingenieria_Software/03_Clean_Code/03_guia_solid.md): Principios SOLID.
+### [🏭 Nivel 3: La Fábrica](./03_Ingenieria_Software/README.md)
+*Construcción profesional y sólida.*
+- **Testing**: El Inspector de Calidad.
+- **Clean Code**: Construyendo con LEGOs.
+- **Docker**: El Contenedor de Envío (NUEVO).
 
-### 💼 Nivel 4: Especialización
-*Aplicando Python al mundo real.*
-- [📂 Web Moderno](04_Especializacion/01_Web/01_guia_web.md): FastAPI.
-- [📂 Data Science](04_Especializacion/02_Data_Science/02_guia_data.md): Pandas, NumPy.
-- [📂 DevOps](04_Especializacion/03_DevOps/03_guia_devops.md): Automatización y Scripts.
+### [🌍 Nivel 4: El Mundo Real](./04_Especializacion/README.md)
+*Proyectos prácticos para graduarte.*
+- **Web**: La Pizzería API.
+- **Data**: Analista Pokémon.
+- **DevOps**: El Robot Mayordomo.
 
 ---
 
 ## 🛠️ Cómo usar este repositorio
 
-1.  **Explora**: Navega a la carpeta del tema que te interesa.
-2.  **Lee**: Abre el archivo `.md` (Guía) para entender los conceptos.
-3.  **Practica**: Ejecuta los archivos `.py` para ver el código en acción.
+1.  **Elige tu Nivel**: Haz clic en los títulos de arriba.
+2.  **Sigue las Metáforas**: Cada carpeta tiene una PORTADA (`README`) que te guía.
+3.  **Juega**: Ejecuta los scripts `.py`. ¡Están diseñados para romperse y arreglarse!
 
 > [!TIP]
-> No trates de memorizar todo. Entiende los conceptos y usa este repo como referencia futura.
+> **Filosofía**: Si no puedes explicárselo a un niño, no lo has entendido bien. (Albert Einstein... o tal vez Yoda).
 
 ---
-Hecho con ❤️ y 🐍.
+Hecho con ❤️ y 🐍 por tu asistente de IA.

@@ -1,45 +1,33 @@
-# 🏷️ Type Hinting: Python Moderno y Robusto
+# 🏷️ Tipado: La Etiquetadora
 
-![Level 2](https://img.shields.io/badge/Level-2-orange)
+![Difficulty](https://img.shields.io/badge/Dificultad-Facil-green)
 
-## 1. ¿Por qué Tipar?
-Python es dinámico, pero el tipado opcional ("Type Hints") introducido en PEP 484 permite:
-- **Autocompletado IDE** 🪄: Mucho más inteligente y preciso.
-- **Reducción de Bugs** 🐛: Herramientas como `mypy` detectan errores de tipo antes de ejecutar.
-- **Documentación** 📖: El código se explica solo.
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Tipos Básicos y `typing`
+Python es un lenguaje "relajado".
+Puedes meter un gato en una caja de zapatos. 📦🐈
+Pero si luego intentas ponerte los zapatos... ¡Miau! 🩸 (Error en tiempo de ejecución).
 
-Desde Python 3.9+, puedes usar tipos nativos `list`, `dict`, `set` en lugar de importar `List` de `typing`.
-
-```python
-# Antes (3.8-)
-from typing import List
-def procesar(items: List[int]) -> None: ...
-
-# Ahora (3.9+)
-def procesar(items: list[int]) -> None: ...
-```
-
-### Tipos Comunes
-- `Optional[int]`: Puede ser `int` o `None`. (También `int | None` en 3.10+).
-- `Union[int, str]`: Puede ser entero o string. (También `int | str` en 3.10+).
-- `Any`: Desactiva el chequeo de tipos (evítalo si puedes).
-- `Callable[[int, int], str]`: Una función que recibe dos enteros y devuelve string.
-
-## 3. Avanzado: Generics y Protocolos
-
-### Generics (`TypeVar`) 📦
-Para funciones que funcionan con varios tipos pero mantienen la relación entre ellos.
-`T = TypeVar('T')`
-
-### Protocol (`Duck Typing` Tipado) 🦆
-Define "qué métodos debe tener" un objeto, sin importar de qué clase herede. Es la versión formal del Duck Typing.
-
-## 4. Análisis Estático
-Instala `mypy` y corre:
-`mypy mi_archivo.py`
-Te avisará si intentas sumar un string a un entero, etc.
+**Type Hinting** es usar una etiquetadora para poner un cartel en la caja: "SOLO ZAPATOS".
+Si intentas meter al gato, una alarma suena antes de que siquiera abras la caja (Mypy).
 
 ---
-[⬅️ Anterior: Gestión de Memoria](../02_Gestion_Memoria/02_guia_memoria.md) | [Siguiente Nivel: Testing 🧪](../../03_Ingenieria_Software/01_Testing/01_guia_testing.md)
+
+## 🦆 El Pato Espacial (Protocol y Duck Typing)
+
+En Python decimos: *"Si camina como pato y hace cuac, es un pato"*.
+Pero a veces necesitas ser más formal.
+**Protocol** es un contrato.
+*"No me importa qué animal seas, pero firma aquí que prometes saber Volar"*.
+
+```python
+class Volador(Protocol):
+    def volar(self): ...
+
+def lanzar_al_vacio(x: Volador):
+    x.volar()
+```
+Ahora el editor (VS Code) te avisará si intentas lanzar al vacío a un Elefante que no sabe volar. 🐘🚫
+
+---
+[⬅️ Anterior: Limpieza](../02_Gestion_Memoria/02_guia_memoria.md) | [Siguiente: Velocímetro ⏱️](../04_Profiling/04_guia_profiling.md)

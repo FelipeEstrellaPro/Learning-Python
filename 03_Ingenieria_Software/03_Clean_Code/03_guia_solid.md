@@ -1,33 +1,26 @@
-# 🧹 Clean Code y SOLID en Python
+# 🧱 Clean Code: Construyendo con LEGOs
 
-![Level 3](https://img.shields.io/badge/Level-3-green)
+![Difficulty](https://img.shields.io/badge/Dificultad-Filosofica-purple)
 
-## 1. PEP 8 y Tooling
-No pierdas tiempo discutiendo formato. Usa herramientas automáticas.
-- **Ruff** ⚡: Linter/Formatter ultrarrápido (reemplaza a Flake8/Black/Isort).
-- **Black** 🌑: El "uncompromising code formatter".
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Principios SOLID 💎
+¿Alguna vez has visto un cuarto desordenado con juguetes por todos lados? Es difícil jugar ahí.
+El código "Sucio" es igual. Funciona, pero da miedo tocarlo.
 
-### S - Single Responsibility (Responsabilidad Única)
-Una clase debe tener **una sola razón para cambiar**.
-> [!NOTE]
-> *Mal*: Una clase `Usuario` que guarda en BD y envía emails.
-> *Bien*: `Usuario` (datos), `UsuarioRepository` (BD), `EmailService` (correos).
-
-### O - Open/Closed (Abierto/Cerrado)
-Abierto a extensión, cerrado a modificación. Usa polimorfismo o inyección de dependencias para agregar comportamientos sin tocar código viejo.
-
-### L - Liskov Substitution (Sustitución de Liskov)
-Las subclases deben poder reemplazar a sus padres sin romper el programa.
-Si tu subclase lanza error en un método que el padre no, viola Liskov.
-
-### I - Interface Segregation (Segregación de Interfaces)
-Mejor muchas interfaces pequeñas y específicas que una gigante ("God Interface"). En Python se usa `Protocol`.
-
-### D - Dependency Inversion (Inversión de Dependencias)
-Depende de abstracciones, no de concreciones.
-En lugar de `def guardar(db: MySQL)`, usa `def guardar(db: DatabaseInterface)`.
+El código "Limpio" es como un set de LEGOs organizado.
+- Cada pieza hace una sola cosa.
+- Las piezas encajan perfecto.
+- Puedes cambiar una pieza de color rojo por una azul y el castillo no se cae.
 
 ---
-[⬅️ Anterior: Entornos](../02_Entornos_Paquetes/02_guia_entornos.md) | [Siguiente Nivel: Especialización 🌟](../../04_Especializacion/01_Web/01_guia_web.md)
+
+## 💎 Los 5 Mandamientos (SOLID)
+
+1.  **S (Single Responsibility)**: El Mago solo hace magia. El Guerrero solo lucha. No hagas un Mago-Guerrero-Cocinero todo en uno.
+2.  **O (Open/Closed)**: Si quieres que el robot vuele, ponle un propulsor en la espalda. No le abras el pecho para cambiarle el corazón.
+3.  **L (Liskov)**: Si parece un pato de hule, debería flotar como un pato de hule. Si se hunde como una piedra, es un mal pato.
+4.  **I (Interface Segregation)**: No obligues al pez a trepar árboles.
+5.  **D (Dependency Inversion)**: Conecta tu lámpara al enchufe de la pared, no la sueldes directamente a los cables de la calle.
+
+---
+[⬅️ Anterior: Laboratorio](../02_Entornos_Paquetes/02_guia_entornos.md) | [Siguiente: Contenedores 🚢](../04_Docker_CI/04_guia_docker.md)

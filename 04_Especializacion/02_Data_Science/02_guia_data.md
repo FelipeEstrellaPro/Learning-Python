@@ -1,22 +1,30 @@
-# 📊 Data Science: Pandas y NumPy
+# 📊 Data Science: Analista Pokémon
 
-![Level 4](https://img.shields.io/badge/Level-4-purple)
+![Difficulty](https://img.shields.io/badge/Dificultad-Visual-blue)
 
-## 1. NumPy (Numerical Python) 🔢
-El núcleo de la ciencia de datos.
-- **Ndarray**: Array N-dimensional. Mucho más rápido que las listas de Python porque está escrito en C y usa bloques de memoria contiguos.
-- **Vectorización**: Operaciones en todo el array sin loops explícitos.
-`arr * 2` multiplica todo el array por 2.
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Pandas 🐼
-Excel con esteroides programable.
-- **DataFrame**: Tabla de datos (filas y columnas).
-- **Series**: Una sola columna.
-- **Lectura**: `pd.read_csv`, `read_excel`, `read_sql`.
-- **Limpieza**: Manejo de `NaN` (nulos), reemplazos, filtrado.
+Imagina que tienes una colección de 1,000 cartas Pokémon.
+Quieres saber: **¿Son más fuertes los de Fuego o los de Agua?** 🔥 vs 💧
 
-## 3. Scikit-learn (Mención) 🤖
-Librería estándar para Machine Learning (Regresiones, Clasificación, Clustering).
+- **A mano**: Tardarías horas sumando ataque por ataque.
+- **Con Pandas (`pandas`)**: Es como un Excel superpoderoso. Le dices: *"Agrupa por tipo y dame el promedio de ataque"*. ¡BOOM! Resultado en 0.01 segundos.
 
 ---
-[⬅️ Anterior: Web](../01_Web/01_guia_web.md) | [Siguiente: DevOps ♾️](../03_DevOps/03_guia_devops.md)
+
+## 🐼 Pandas en Acción
+
+Imagina que tus datos son una tabla gigante llamada `df` (DataFrame).
+
+```python
+# 1. ¿Quién es más fuerte?
+fuego = df[df["Tipo"] == "Fuego"]
+agua = df[df["Tipo"] == "Agua"]
+
+print(fuego["Ataque"].mean()) # 78.5
+print(agua["Ataque"].mean())  # 72.1
+```
+¡Conclusión científica! Los de fuego pegan más fuerte. (Datos inventados para el ejemplo, ¡compruébalo tú!).
+
+---
+[⬅️ Anterior: Pizzería](../01_Web/01_guia_web.md) | [Siguiente: Robot Mayordomo 🤖](../03_DevOps/03_guia_devops.md)

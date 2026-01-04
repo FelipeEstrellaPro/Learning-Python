@@ -1,42 +1,30 @@
-# 🎁 Decoradores y Generadores: Control Avanzado
+# 🎁 Decoradores: El Papel de Regalo
 
-![Level 1](https://img.shields.io/badge/Level-1-blue)
+![Difficulty](https://img.shields.io/badge/Dificultad-Magica-purple)
 
-## 1. Decoradores
-Patrón estructural que permite añadir funcionalidades a un objeto (función/clase) sin modificar su estructura.
-- **Sintaxis**: `@decorador` encima de la función.
-- **Qué son**: Funciones que reciben una función y devuelven otra función (wrapper).
-- **Uso**: Logging, Timing, Autenticación, Caching (memoization).
+## 👶 Explicación para Niños (ELI5)
 
-> [!IMPORTANT]
-> Siempre usa `functools.wraps` dentro de tu decorador para no perder el nombre y docstring de la función original.
+Imagina que tienes un regalo (una función).
+El regalo hace algo aburrido, como decir "Hola".
+Pero tú quieres que antes de decir "Hola", suenen trompetas 🎺 y después lance confeti 🎉.
 
-## 2. Generadores (`yield`) 🏭
-Funciones que mantienen su estado entre ejecuciones. En lugar de retornar un valor y morir, "ceden" (`yield`) un valor y pausan su ejecución hasta ser llamadas de nuevo.
+En lugar de abrir el regalo y cambiarlo por dentro, lo envuelves en un **Papel de Regalo Mágico** (Decorador).
+Ahora, cuando entregas el regalo, el papel hace el show de las trompetas, se abre el regalo ("Hola"), y luego el papel lanza el confeti.
 
-### Ventajas vs Listas
-1. **Memoria** 📉: No construyen toda la lista en RAM. Generan valores bajo demanda (Lazy Evaluation).
-2. **Rendimiento** ⚡: Ideales para streams de datos infinitos o muy grandes.
-
-### Expresiones Generadoras
-Similar a las list comprehensions pero con paréntesis `()`.
-`gen = (x*2 for x in lista)`
-
-## 3. 🧠 Diagrama: Flujo de un Decorador
-
-```mermaid
-sequenceDiagram
-    participant Call as Caller
-    participant Wrap as Wrapper (Decorador)
-    participant Func as Función Original
-    
-    Call->>Wrap: Llama a funcion_decorada()
-    Wrap->>Wrap: Ejecuta código PREVIO
-    Wrap->>Func: Llama a funcion_original()
-    Func-->>Wrap: Retorna resultado
-    Wrap->>Wrap: Ejecuta código POSTERIOR
-    Wrap-->>Call: Retorna resultado modificado
-```
+El regalo nunca supo qué pasó. Simplemente funcionó.
 
 ---
-[⬅️ Anterior: POO](../03_POO/03_guia_poo.md) | [Siguiente Nivel: Asyncio 🚀](../../02_Python_Avanzado/01_Asincronismo/01_guia_asyncio.md)
+
+## 🏭 Generadores: La Máquina de Tickets
+
+Imagina una lista con 1 millón de números.
+- **Lista normal**: Escribes el millón de números en un libro gigante. Pesa muchísimo (Mucha Memoria RAM). 😫
+- **Generador (`yield`)**: Es como la maquinita de turnos del banco. Te da un ticket (el número 1), y espera. Cuando pides otro, te da el 2.
+Nunca tiene el millón de tickets impresos a la vez. ¡Solo el que necesitas ahora! 🧠
+
+> [!NOTE]
+> **¿Cuándo usarlos?**
+> Si vas a leer un archivo de 10GB, ¡no lo abras todo! Usa un generador para leer línea por línea. Tu computadora te lo agradecerá.
+
+---
+[⬅️ Anterior: Planos Maestros](../03_POO/03_guia_poo.md) | [Siguiente: La Red de Seguridad ➡️](../05_Manejo_Errores/05_guia_errores.md)

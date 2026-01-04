@@ -1,38 +1,30 @@
-# 🧠 Gestión de Memoria y Rendimiento
+# 🧠 Gestión de Memoria: El Equipo de Limpieza
 
-![Level 2](https://img.shields.io/badge/Level-2-orange)
+![Difficulty](https://img.shields.io/badge/Dificultad-Media-yellow)
 
-## 1. El GIL (Global Interpreter Lock) 🔒
-El GIL es un semáforo que asegura que solo un hilo de ejecución (thread) corra a la vez en el intérprete de CPython.
-- **Consecuencia**: `threading` no sirve para paralelismo real de CPU (cálculos matemáticos). Solo sirve para I/O.
-- **Solución**: Para usar todos los núcleos del CPU, usa `multiprocessing`.
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Administración de Memoria
-Python gestiona la memoria automáticamente, pero entender cómo funciona ayuda a optimizar.
+Tu programa es una fiesta. 🎉
+Los invitados son las variables y datos.
+La memoria RAM es la casa. Si entra demasiada gente, la casa explota (Crash).
 
-### Reference Counting (Conteo de Referencias)
-Es el mecanismo principal. Cada objeto tiene un contador. Si llega a 0, se elimina inmediatamente.
-`sys.getrefcount(obj)`
-
-### Garbage Collector (GC) 🗑️
-Mecanismo secundario para detectar **ciclos de referencia** (A apunta a B y B apunta a A). Se ejecuta periódicamente.
-
-## 3. Optimizaciones
-
-### `__slots__` 📉
-Por defecto, las clases guardan atributos en un `dict` (`__dict__`), lo cual consume mucha RAM.
-Si defines `__slots__ = ['nombre', 'edad']`, Python reserva espacio fijo y **no** crea el diccionario, ahorrando hasta un 40-50% de memoria en millones de objetos.
-
-### Generadores vs Listas
-(Visto en Nivel 1) Siempre prefiere generadores para secuencias largas.
-
-## 4. Multiprocessing vs Threading
-
-| Característica | Threading 🧵 | Multiprocessing ⚙️⚙️ |
-| :--- | :--- | :--- |
-| **Memoria** | Compartida (Ligero) | Separada (Pesado) |
-| **GIL** | Limitado por GIL | Evita el GIL |
-| **Uso Ideal** | I/O Bound (Red, Disco) | CPU Bound (Cálculos) |
+En Python, tienes un **Mayordomo Automático** (Garbage Collector).
+- Cuando un invitado se queda solo en un rincón y nadie le habla (Contador de Referencias = 0), el mayordomo lo echa de la casa. 👋
 
 ---
-[⬅️ Anterior: Asincronismo](../01_Asincronismo/01_guia_asyncio.md) | [Siguiente: Tipado ➡️](../03_Tipado/03_guia_type_hinting.md)
+
+## 📉 Trucos para Ahorrar Espacio
+
+### `__slots__` (Sillas Reservadas)
+Por defecto, cada invitado (Objeto) trae una mochila gigante vacía (`__dict__`) por si quiere guardar cosas nuevas. Eso ocupa mucho espacio.
+Si usas `__slots__ = ['nombre']`, le dices: *"Solo puedes traer tu nombre, nada de mochilas"*.
+**Resultado**: Caben el doble de invitados en la misma casa.
+
+### El Mito de los Hilos (Threading) 🧵
+Mucha gente cree que usar hilos (`threading`) hace que Python piense más rápido.
+**FALSO**.
+Por culpa de un candado llamado **GIL**, solo un hilo puede "pensar" a la vez.
+Los hilos solo sirven si uno se duerme (esperando red), para que el otro trabaje.
+
+---
+[⬅️ Anterior: Chef Multitarea](../01_Asincronismo/01_guia_asyncio.md) | [Siguiente: Etiquetadora 🏷️](../03_Tipado/03_guia_type_hinting.md)

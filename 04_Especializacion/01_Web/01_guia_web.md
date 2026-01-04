@@ -1,28 +1,41 @@
-# 🌐 Desarrollo Web Moderno: FastAPI
+# 🌐 Web: La Pizzería API (FastAPI)
 
-![Level 4](https://img.shields.io/badge/Level-4-purple)
+![Difficulty](https://img.shields.io/badge/Dificultad-Divertida-purple)
 
-## 1. ¿Por qué FastAPI? ⚡
-- **Velocidad**: Casi tan rápido como NodeJS/Go (gracias a Starlette y Pydantic).
-- **Estándares**: Basado en JSON Schema y OpenAPI.
-- **Productividad**: Autocompletado, menos errores, docs automáticos.
+## 👶 Explicación para Niños (ELI5)
 
-## 2. Componentes Clave
+Una **API** es como un camarero. 🤵
+1.  Tú (Cliente) le pides: *"Quiero una pizza de pepperoni"* (Request).
+2.  El camarero va a la cocina, le dice al cocinero, y vuelve con la pizza.
+3.  Te la entrega: *"Aquí tiene"* (Response).
 
-### Pydantic 🛡️
-Validación de datos usando Type Hints.
-```python
-class Item(BaseModel):
-    nombre: str
-    precio: float
-```
-Si mandas un string en `precio`, Pydantic lanza error automáticamente.
-
-### OpenAPI (Swagger UI) 📑
-FastAPI genera `/docs` automáticamente. No necesitas escribir YAMLs gigantes a mano.
-
-### Async Nativo 🕒
-Defines endpoints con `async def`, permitiendo alta concurrencia.
+Si no hubiera camarero (API), tendrías que entrar tú a la cocina a cocinar. (Peligroso y sucio).
 
 ---
-[⬅️ Anterior Nivel: Clean Code](../../03_Ingenieria_Software/03_Clean_Code/03_guia_solid.md) | [Siguiente: Data Science 📊](../02_Data_Science/02_guia_data.md)
+
+## 🍕 Tu Proyecto: Pizza-Net
+
+Vamos a crear un camarero digital usando **FastAPI**.
+Es el camarero más rápido del oeste.
+
+### El Menú (Modelos)
+```python
+class Pizza(BaseModel):
+    sabor: str
+    precio: float
+    extra_queso: bool = False
+```
+
+### Tomar la Orden (Endpoint)
+```python
+@app.post("/pedir/")
+async def cocinar_pizza(pizza: Pizza):
+    if pizza.extra_queso:
+        return f"¡{pizza.sabor} con MUCHO queso lista!"
+    return f"¡{pizza.sabor} lista!"
+```
+
+**¡Eso es todo!** Acabas de crear un backend.
+
+---
+[⬅️ Volver al Mapa](../README.md) | [Siguiente: Analista Pokémon 📊](../02_Data_Science/02_guia_data.md)
