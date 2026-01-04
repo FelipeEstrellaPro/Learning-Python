@@ -1,26 +1,101 @@
 # 🧱 Clean Code: Construyendo con LEGOs
 
 ![Difficulty](https://img.shields.io/badge/Dificultad-Filosofica-purple)
+![Reading Time](https://img.shields.io/badge/Lectura-15_min-blue)
 
-## 👶 Explicación para Niños (ELI5)
+## 👶 1. Explicación para Niños (ELI5)
 
-¿Alguna vez has visto un cuarto desordenado con juguetes por todos lados? Es difícil jugar ahí.
-El código "Sucio" es igual. Funciona, pero da miedo tocarlo.
-
-El código "Limpio" es como un set de LEGOs organizado.
-- Cada pieza hace una sola cosa.
-- Las piezas encajan perfecto.
-- Puedes cambiar una pieza de color rojo por una azul y el castillo no se cae.
+El código "Sucio" funciona, pero da miedo tocarlo (como un cuarto desordenado).
+El código "Limpio" es como un set de LEGOs organizado. Puedes cambiar piezas sin romper todo el castillo.
 
 ---
 
-## 💎 Los 5 Mandamientos (SOLID)
+## 🔬 2. Deep Dive: Acoplamiento y Cohesión
 
-1.  **S (Single Responsibility)**: El Mago solo hace magia. El Guerrero solo lucha. No hagas un Mago-Guerrero-Cocinero todo en uno.
-2.  **O (Open/Closed)**: Si quieres que el robot vuele, ponle un propulsor en la espalda. No le abras el pecho para cambiarle el corazón.
-3.  **L (Liskov)**: Si parece un pato de hule, debería flotar como un pato de hule. Si se hunde como una piedra, es un mal pato.
-4.  **I (Interface Segregation)**: No obligues al pez a trepar árboles.
-5.  **D (Dependency Inversion)**: Conecta tu lámpara al enchufe de la pared, no la sueldes directamente a los cables de la calle.
+El objetivo de la Ingeniería de Software es:
+- **Alta Cohesión**: El código relacionado debe estar junto. (La clase `Panadero` debe tener métodos de hornear, no de reparar coches).
+- **Bajo Acoplamiento**: Las piezas deben depender lo menos posible entre sí. Si cambio el motor del auto, no debería tener que cambiar las llantas.
+
+---
+
+## 📊 3. Visualización: Inversión de Dependencias (D de SOLID)
+
+```mermaid
+graph BT
+    Switch[Interruptor] 
+    Bulb[Bombilla Concreta]
+    Socket[<<Interfaz>> Enchufe]
+    
+    subgraph Mal Diseño [Acoplamiento Alto]
+        Switch -- depende de --> Bulb
+    end
+    
+    subgraph Buen Diseño [Inversión Dependencias]
+        Switch -- usa --> Socket
+        Bulb -- implementa --> Socket
+    end
+    
+    style Socket fill:#ffffcc
+```
+*El Interruptor no debería conocer la Bombilla. Ambos deben conocer el Enchufe.*
+
+---
+
+## 👩‍💻 4. Tutorial Interactivo: Refactorizando
+
+Vamos a arreglar un código sucio.
+
+```python
+from abc import ABC, abstractmethod
+
+# --- ❌ CÓDIGO SUCIO (Acoplado) ---
+class MotorGasolina:
+    def encender(self):
+        print("Brum brum! ⛽")
+
+class Auto:
+    def __init__(self):
+        # ERROR: El Auto crea su propio motor. 
+        # Si queremos poner un motor eléctrico, tenemos que romper la clase Auto.
+        self.motor = MotorGasolina() 
+    
+    def arrancar(self):
+        self.motor.encender()
+
+# --- ✅ CÓDIGO LIMPIO (SOLID) ---
+
+# 1. Definimos la Interfaz (El Contrato)
+class Motor(ABC):
+    @abstractmethod
+    def encender(self): pass
+
+# 2. Implementaciones Concretas
+class MotorGasolinaV2(Motor):
+    def encender(self): print("Brum brum! ⛽")
+
+class MotorElectrico(Motor):
+    def encender(self): print("Shhh... ⚡")
+
+# 3. Inyección de Dependencias
+class AutoMejorado:
+    # El auto NO crea el motor. Lo RECIBE.
+    def __init__(self, motor: Motor):
+        self.motor = motor # Polimorfismo
+    
+    def arrancar(self):
+        self.motor.encender()
+
+# USO
+nissan = AutoMejorado(MotorGasolinaV2())
+tesla = AutoMejorado(MotorElectrico())
+
+nissan.arrancar()
+tesla.arrancar() # ¡Funciona sin tocar el código del Auto!
+```
+
+### 🧠 ¿Qué aprendimos?
+1.  **Dependency Injection**: Pasamos el motor por el constructor `__init__`.
+2.  **Open/Closed Principle**: El código de `AutoMejorado` está CERRADO a modificaciones (no hay que tocarlo) pero ABIERTO a extensión (acepta motores nucleares, de hamster, etc).
 
 ---
 [⬅️ Anterior: Laboratorio](../02_Entornos_Paquetes/02_guia_entornos.md) | [Siguiente: Contenedores 🚢](../04_Docker_CI/04_guia_docker.md)
