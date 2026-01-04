@@ -1,16 +1,19 @@
-# Clean Code y SOLID en Python
+# 🧹 Clean Code y SOLID en Python
+
+![Level 3](https://img.shields.io/badge/Level-3-green)
 
 ## 1. PEP 8 y Tooling
 No pierdas tiempo discutiendo formato. Usa herramientas automáticas.
-- **Ruff**: Linter/Formatter ultrarrápido (reemplaza a Flake8/Black/Isort).
-- **Black**: El "uncompromising code formatter".
+- **Ruff** ⚡: Linter/Formatter ultrarrápido (reemplaza a Flake8/Black/Isort).
+- **Black** 🌑: El "uncompromising code formatter".
 
-## 2. Principios SOLID
+## 2. Principios SOLID 💎
 
 ### S - Single Responsibility (Responsabilidad Única)
 Una clase debe tener **una sola razón para cambiar**.
-*Mal*: Una clase `Usuario` que guarda en BD y envía emails.
-*Bien*: `Usuario` (datos), `UsuarioRepository` (BD), `EmailService` (correos).
+> [!NOTE]
+> *Mal*: Una clase `Usuario` que guarda en BD y envía emails.
+> *Bien*: `Usuario` (datos), `UsuarioRepository` (BD), `EmailService` (correos).
 
 ### O - Open/Closed (Abierto/Cerrado)
 Abierto a extensión, cerrado a modificación. Usa polimorfismo o inyección de dependencias para agregar comportamientos sin tocar código viejo.
@@ -25,3 +28,6 @@ Mejor muchas interfaces pequeñas y específicas que una gigante ("God Interface
 ### D - Dependency Inversion (Inversión de Dependencias)
 Depende de abstracciones, no de concreciones.
 En lugar de `def guardar(db: MySQL)`, usa `def guardar(db: DatabaseInterface)`.
+
+---
+[⬅️ Anterior: Entornos](../02_Entornos_Paquetes/02_guia_entornos.md) | [Siguiente Nivel: Especialización 🌟](../../04_Especializacion/01_Web/01_guia_web.md)

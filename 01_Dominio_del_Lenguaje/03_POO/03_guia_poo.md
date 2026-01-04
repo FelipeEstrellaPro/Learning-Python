@@ -1,11 +1,13 @@
-# Programación Orientada a Objetos (POO) Avanzada
+# 🎳 Programación Orientada a Objetos (POO) Avanzada
+
+![Level 1](https://img.shields.io/badge/Level-1-blue)
 
 ## 1. Más allá de `class Perro(Animal)`
 Un experto en Python no solo usa herencia, sino que domina la composición, los mixins y los "Métodos Mágicos" (Dunder Methods) para hacer que sus objetos se comporten como tipos nativos.
 
 ## 2. Herramientas Clave
 
-### 2.1 Dunder Methods (Double Underscore)
+### 2.1 Dunder Methods (Double Underscore) 🪄
 Permiten sobrecargar operadores y definir comportamientos de bajo nivel.
 - `__init__`: Constructor.
 - `__str__` vs `__repr__`: `__str__` es para usuarios finales (print), `__repr__` es para desarrolladores (debugging).
@@ -13,14 +15,16 @@ Permiten sobrecargar operadores y definir comportamientos de bajo nivel.
 - `__len__`, `__getitem__`: Para que el objeto se comporte como una lista/colección.
 - `__enter__`, `__exit__`: Para Context Managers (`with statement`).
 
-### 2.2 Mixins
+### 2.2 Mixins 🧩
 Clases pequeñas diseñadas para agregar funcionalidad específica a otras clases mediante herencia múltiple, sin ser la clase "padre" principal.
+
+> [!TIP]
 > **Ejemplo**: `JsonSerializableMixin` que agrega un método `.to_json()` a cualquier clase.
 
-### 2.3 Properties (`@property`)
+### 2.3 Properties (`@property`) 🔒
 Permiten encapsulamiento (getters/setters) sin cambiar la API pública de la clase. Puedes acceder a `obj.precio` pero internamente ejecutar lógica.
 
-## 3. Diagrama: Herencia y Mixins
+## 3. 🧠 Diagrama: Herencia y Mixins
 
 ```mermaid
 classDiagram
@@ -41,3 +45,6 @@ classDiagram
     VoladorMixin <|-- Pato
     NadadorMixin <|-- Pato
 ```
+
+---
+[⬅️ Anterior: Programación Funcional](../02_Programacion_Funcional/02_guia_funcional.md) | [Siguiente: Decoradores ➡️](../04_Decoradores_Generadores/04_guia_deco_gen.md)

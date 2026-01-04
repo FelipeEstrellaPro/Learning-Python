@@ -1,6 +1,8 @@
-# Gestión de Memoria y Rendimiento
+# 🧠 Gestión de Memoria y Rendimiento
 
-## 1. El GIL (Global Interpreter Lock)
+![Level 2](https://img.shields.io/badge/Level-2-orange)
+
+## 1. El GIL (Global Interpreter Lock) 🔒
 El GIL es un semáforo que asegura que solo un hilo de ejecución (thread) corra a la vez en el intérprete de CPython.
 - **Consecuencia**: `threading` no sirve para paralelismo real de CPU (cálculos matemáticos). Solo sirve para I/O.
 - **Solución**: Para usar todos los núcleos del CPU, usa `multiprocessing`.
@@ -12,12 +14,12 @@ Python gestiona la memoria automáticamente, pero entender cómo funciona ayuda 
 Es el mecanismo principal. Cada objeto tiene un contador. Si llega a 0, se elimina inmediatamente.
 `sys.getrefcount(obj)`
 
-### Garbage Collector (GC)
+### Garbage Collector (GC) 🗑️
 Mecanismo secundario para detectar **ciclos de referencia** (A apunta a B y B apunta a A). Se ejecuta periódicamente.
 
 ## 3. Optimizaciones
 
-### `__slots__`
+### `__slots__` 📉
 Por defecto, las clases guardan atributos en un `dict` (`__dict__`), lo cual consume mucha RAM.
 Si defines `__slots__ = ['nombre', 'edad']`, Python reserva espacio fijo y **no** crea el diccionario, ahorrando hasta un 40-50% de memoria en millones de objetos.
 
@@ -26,8 +28,11 @@ Si defines `__slots__ = ['nombre', 'edad']`, Python reserva espacio fijo y **no*
 
 ## 4. Multiprocessing vs Threading
 
-| Característica | Threading | Multiprocessing |
+| Característica | Threading 🧵 | Multiprocessing ⚙️⚙️ |
 | :--- | :--- | :--- |
 | **Memoria** | Compartida (Ligero) | Separada (Pesado) |
 | **GIL** | Limitado por GIL | Evita el GIL |
 | **Uso Ideal** | I/O Bound (Red, Disco) | CPU Bound (Cálculos) |
+
+---
+[⬅️ Anterior: Asincronismo](../01_Asincronismo/01_guia_asyncio.md) | [Siguiente: Tipado ➡️](../03_Tipado/03_guia_type_hinting.md)

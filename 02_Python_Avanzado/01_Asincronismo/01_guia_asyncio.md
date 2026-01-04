@@ -1,22 +1,31 @@
-# Programación Asíncrona (Asyncio)
+# ⏳ Programación Asíncrona (Asyncio)
+
+![Level 2](https://img.shields.io/badge/Level-2-orange)
 
 ## 1. Concurrencia vs Paralelismo
 - **Concurrencia (Asyncio/Threading)**: Tareas que avanzan "a la vez" alternando tiempos de espera (I/O bound). Ideal para redes, APIs, BDs.
 - **Paralelismo (Multiprocessing)**: Tareas corriendo literalmente al mismo tiempo en múltiples núcleos (CPU bound). Ideal para cálculos pesados.
 
 ## 2. Conceptos Clave
-1.  **Event Loop**: El corazón de asyncio. Gestiona y distribuye la ejecución de tareas.
-2.  **Corrutina (`async def`)**: Una función que puede pausarse (`await`) y retomarse.
-3.  **Awaitable**: Objetos que pueden ser esperados (Corrutinas, Tasks, Futures).
+
+### Event Loop 🎡
+El corazón de asyncio. Gestiona y distribuye la ejecución de tareas.
+
+### Corrutina (`async def`) ⏯️
+Una función que puede pausarse (`await`) y retomarse.
+
+### Awaitable 🕒
+Objetos que pueden ser esperados (Corrutinas, Tasks, Futures).
 
 ## 3. Patrones Comunes
 - `await func()`: Espera secuencial.
 - `asyncio.gather(func1(), func2())`: Ejecución concurrente.
 - `asyncio.create_task()`: Lanza una tarea en "segundo plano" (fire and forget o esperar después).
 
+> [!NOTE]
 > **GIL (Global Interpreter Lock)**: Python estándar (CPython) solo ejecuta un hilo a la vez. Por eso `threading` no acelera tareas de CPU, pero asyncio sí acelera tareas de I/O al no bloquear mientras espera respuestas externas.
 
-## 4. Diagrama: Bloqueante vs No-Bloqueante
+## 4. 🧠 Diagrama: Bloqueante vs No-Bloqueante
 
 ```mermaid
 sequenceDiagram
@@ -35,3 +44,6 @@ sequenceDiagram
     API-->>Main: Response 2
     API-->>Main: Response 1
 ```
+
+---
+[⬅️ Anterior Nivel: Decoradores](../../01_Dominio_del_Lenguaje/04_Decoradores_Generadores/04_guia_deco_gen.md) | [Siguiente: Gestión de Memoria ➡️](../02_Gestion_Memoria/02_guia_memoria.md)

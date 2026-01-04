@@ -1,10 +1,12 @@
-# Type Hinting: Python Moderno y Robusto
+# 🏷️ Type Hinting: Python Moderno y Robusto
+
+![Level 2](https://img.shields.io/badge/Level-2-orange)
 
 ## 1. ¿Por qué Tipar?
 Python es dinámico, pero el tipado opcional ("Type Hints") introducido en PEP 484 permite:
-- **Autocompletado IDE**: Mucho más inteligente y preciso.
-- **Reducción de Bugs**: Herramientas como `mypy` detectan errores de tipo antes de ejecutar.
-- **Documentación**: El código se explica solo.
+- **Autocompletado IDE** 🪄: Mucho más inteligente y preciso.
+- **Reducción de Bugs** 🐛: Herramientas como `mypy` detectan errores de tipo antes de ejecutar.
+- **Documentación** 📖: El código se explica solo.
 
 ## 2. Tipos Básicos y `typing`
 
@@ -27,14 +29,17 @@ def procesar(items: list[int]) -> None: ...
 
 ## 3. Avanzado: Generics y Protocolos
 
-### Generics (`TypeVar`)
+### Generics (`TypeVar`) 📦
 Para funciones que funcionan con varios tipos pero mantienen la relación entre ellos.
 `T = TypeVar('T')`
 
-### Protocol (`Duck Typing` Tipado)
+### Protocol (`Duck Typing` Tipado) 🦆
 Define "qué métodos debe tener" un objeto, sin importar de qué clase herede. Es la versión formal del Duck Typing.
 
 ## 4. Análisis Estático
 Instala `mypy` y corre:
 `mypy mi_archivo.py`
 Te avisará si intentas sumar un string a un entero, etc.
+
+---
+[⬅️ Anterior: Gestión de Memoria](../02_Gestion_Memoria/02_guia_memoria.md) | [Siguiente Nivel: Testing 🧪](../../03_Ingenieria_Software/01_Testing/01_guia_testing.md)
